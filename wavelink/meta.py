@@ -6,7 +6,7 @@ from .events import *
 from .node import Node
 
 
-class WavelinkMixin:
+class NextlinkMixin:
     """Wavelink Mixin class.
 
     .. warning::
@@ -33,7 +33,7 @@ class WavelinkMixin:
 
         for name, element in inspect.getmembers(cls):
             try:
-                element_listeners = getattr(element, '__wavelink_listeners__')
+                element_listeners = getattr(element, '__nextlink_listeners__')
             except AttributeError:
                 continue
 
@@ -44,11 +44,11 @@ class WavelinkMixin:
                     listeners[listener] = [element.__name__]
 
         self = super().__new__(cls)
-        cls.__wavelink_listeners__ = listeners
+        cls.__nextlink_listeners__ = listeners
 
         return self
 
-    async def on_wavelink_error(self, listener,  error: Exception):
+    async def on_nextlink_error(self, listener,  error: Exception):
         """Event dispatched when an error is raised during mixin listener dispatch.
 
         Parameters
