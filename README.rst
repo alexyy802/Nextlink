@@ -49,9 +49,9 @@ A quick and easy bot example:
 
 .. code:: py
 
-    import discord
+    import nextcord
     import nextlink
-    from discord.ext import commands
+    from nextcord.ext import commands
 
 
     class Bot(commands.Bot):
@@ -70,8 +70,8 @@ A quick and easy bot example:
         def __init__(self, bot):
             self.bot = bot
 
-            if not hasattr(bot, 'wavelink'):
-                self.bot.wavelink = wavelink.Client(bot=self.bot)
+            if not hasattr(bot, 'nextclink'):
+                self.bot.nextlink = nextlink.Client(bot=self.bot)
 
             self.bot.loop.create_task(self.start_nodes())
 
@@ -80,7 +80,7 @@ A quick and easy bot example:
 
             # Initiate our nodes. For this example we will use one server.
             # Region should be a discord.py guild.region e.g sydney or us_central (Though this is not technically required)
-            await self.bot.wavelink.initiate_node(host='host_url',
+            await self.bot.nextlink.initiate_node(host='host_url',
                                                   port=12345,
                                                   rest_uri='http://host_url:port',
                                                   password='password123',
@@ -93,7 +93,7 @@ A quick and easy bot example:
                 try:
                     channel = ctx.author.voice.channel
                 except AttributeError:
-                    raise discord.DiscordException('No channel to join. Please either specify a valid channel or join one.')
+                    raise nextcord.DiscordException('No channel to join. Please either specify a valid channel or join one.')
 
             player = self.bot.wavelink.get_player(ctx.guild.id)
             await ctx.send(f'Connecting to **`{channel.name}`**')
@@ -106,7 +106,7 @@ A quick and easy bot example:
             if not tracks:
                 return await ctx.send('Could not find any songs with that query.')
 
-            player = self.bot.wavelink.get_player(ctx.guild.id)
+            player = self.bot.nextlinklink.get_player(ctx.guild.id)
             if not player.is_connected:
                 await ctx.invoke(self.connect_)
 
