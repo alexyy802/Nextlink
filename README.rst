@@ -70,7 +70,7 @@ A quick and easy bot example:
         def __init__(self, bot):
             self.bot = bot
 
-            if not hasattr(bot, 'nextclink'):
+            if not hasattr(bot, 'nextlink'):
                 self.bot.nextlink = nextlink.Client(bot=self.bot)
 
             self.bot.loop.create_task(self.start_nodes())
@@ -93,20 +93,20 @@ A quick and easy bot example:
                 try:
                     channel = ctx.author.voice.channel
                 except AttributeError:
-                    raise nextcord.DiscordException('No channel to join. Please either specify a valid channel or join one.')
+                    raise nextcord.NextcordException('No channel to join. Please either specify a valid channel or join one.')
 
-            player = self.bot.wavelink.get_player(ctx.guild.id)
+            player = self.bot.nextlink.get_player(ctx.guild.id)
             await ctx.send(f'Connecting to **`{channel.name}`**')
             await player.connect(channel.id)
 
         @commands.command()
         async def play(self, ctx, *, query: str):
-            tracks = await self.bot.wavelink.get_tracks(f'ytsearch:{query}')
+            tracks = await self.bot.nextlink.get_tracks(f'ytsearch:{query}')
 
             if not tracks:
                 return await ctx.send('Could not find any songs with that query.')
 
-            player = self.bot.nextlinklink.get_player(ctx.guild.id)
+            player = self.bot.nextlink.get_player(ctx.guild.id)
             if not player.is_connected:
                 await ctx.invoke(self.connect_)
 
