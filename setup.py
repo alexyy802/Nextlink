@@ -49,18 +49,18 @@ if ON_RTD:
 with open(ROOT / 'README.rst', encoding='utf-8') as f:
     README = f.read()
 
-with open(ROOT / 'wavelink' / '__init__.py', encoding='utf-8') as f:
+with open(ROOT / 'nextlink' / '__init__.py', encoding='utf-8') as f:
     VERSION = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 
 
 setuptools.setup(
-    name='wavelink',
-    author='EvieePy',
-    url='https://github.com/EvieePy/Wavelink',
+    name='nextlink',
+    author='alexyy802',
+    url='https://github.com/alexyy802/Nextlink',
     version=VERSION,
-    packages=['wavelink'],
+    packages=['nextlink'],
     license='MIT',
-    description='A versatile LavaLink wrapper for nextcord',
+    description='A versatile LavaLink wrapper for nextcord forked from wavelink',
     long_description=README,
     include_package_data=True,
     install_requires=REQUIREMENTS,
