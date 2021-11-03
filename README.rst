@@ -17,7 +17,7 @@ Documentation
 Support
 ---------------------------
 For support using WaveLink, please join the official `support server
-<https://discord.gg/RAKc3HF>`_ on `Discord <https://discordapp.com/>`_.
+<https://discord.gg/nextcord>`_ on `Discord <https://discordapp.com/>`_.
 
 |Discord|
 
