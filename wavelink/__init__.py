@@ -1,5 +1,5 @@
-__title__ = 'WaveLink'
-__author__ = 'EvieePy'
+__title__ = 'Nextlink'
+__author__ = 'alexyy802'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2019-2021 (c) PythonistaGuild'
 __version__ = '0.9.10'
