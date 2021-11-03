@@ -23,7 +23,7 @@ SOFTWARE.
 import aiohttp
 import asyncio
 import logging
-from discord.ext import commands
+from nextcord.ext import commands
 from functools import partial
 from json import dumps
 from typing import Optional, Union
@@ -40,16 +40,16 @@ class Client:
     """The main WaveLink client."""
 
     def __new__(cls, *args, **kwargs):
-        cls.__qualname__ = 'wavelink.Client'
+        cls.__qualname__ = 'nextlink.Client'
 
         try:
             bot = kwargs['bot']
         except KeyError:
-            msg = 'wavelink.Client: bot is a required keyword only argument which is missing.'
-            raise WavelinkException(msg)
+            msg = 'nextlink.Client: bot is a required keyword only argument which is missing.'
+            raise NextlinkException(msg)
 
         if not isinstance(bot, (commands.Bot, commands.AutoShardedBot)):
-            msg = f'wavelink.Client expected type <commands.Bot or commands.AutoShardedBot> not {type(bot)}'
+            msg = f'Nextlink.Client expected type <commands.Bot or commands.AutoShardedBot> not {type(bot)}'
             raise TypeError(msg)
 
         try:
@@ -58,7 +58,7 @@ class Client:
             return super().__new__(cls)
 
         for handler in update_handlers:
-            if handler.__self__.__class__.__qualname__ == 'wavelink.Client':
+            if handler.__self__.__class__.__qualname__ == 'nextlink.Client':
                 bot.remove_listener(handler, 'on_socket_response')
 
         return super().__new__(cls)
@@ -112,7 +112,7 @@ class Client:
 
         for cog in self.bot.cogs.values():
             try:
-                listeners = cog.__wavelink_listeners__[name]
+                listeners = cog.__nextlink_listeners__[name]
             except (AttributeError, KeyError):
                 continue
 
