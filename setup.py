@@ -60,7 +60,7 @@ setuptools.setup(
     version=VERSION,
     packages=['wavelink'],
     license='MIT',
-    description='A versatile LavaLink wrapper for Discord.py',
+    description='A versatile LavaLink wrapper for nextcord',
     long_description=README,
     include_package_data=True,
     install_requires=REQUIREMENTS,
