@@ -1,5 +1,3 @@
-.. image:: logo.png?raw=true
-    :align: center
 
 .. image:: https://img.shields.io/badge/Python-3.7%20%7C%203.8-blue.svg
     :target: https://www.python.org
@@ -10,7 +8,7 @@
 .. image:: https://img.shields.io/github/license/EvieePy/Wavelink.svg
     :target: LICENSE
 
-A robust and powerful Lavalink wrapper for `Discord.py <https://github.com/Rapptz/discord.py>`_!
+A maintained fork of wavelink for  `Nextcord <https://github.com/Rapptz/discord.py>`_
 
 Documentation
 ---------------------------
@@ -24,13 +22,13 @@ For support using WaveLink, please join the official `support server
 |Discord|
 
 .. |Discord| image:: https://img.shields.io/discord/490948346773635102?color=%237289DA&label=Pythonista&logo=discord&logoColor=white
-   :target: https://discord.gg/RAKc3HF
+   :target: https://discord.gg/nextcord
 
 Installation
 ---------------------------
-The following commands are currently the valid ways of installing WaveLink.
+The following commands are currently the valid ways of installing NextLink.
 
-**WaveLink requires Python 3.7+**
+**NextLink requires Python 3.7+**
 
 **Windows**
 
@@ -52,7 +50,7 @@ A quick and easy bot example:
 .. code:: py
 
     import discord
-    import wavelink
+    import nextlink
     from discord.ext import commands
 
 
@@ -82,11 +80,11 @@ A quick and easy bot example:
 
             # Initiate our nodes. For this example we will use one server.
             # Region should be a discord.py guild.region e.g sydney or us_central (Though this is not technically required)
-            await self.bot.wavelink.initiate_node(host='127.0.0.1',
-                                                  port=2333,
-                                                  rest_uri='http://127.0.0.1:2333',
-                                                  password='youshallnotpass',
-                                                  identifier='TEST',
+            await self.bot.wavelink.initiate_node(host='host_url',
+                                                  port=12345,
+                                                  rest_uri='http://host_url:port',
+                                                  password='password123',
+                                                  identifier='MUSIC',
                                                   region='us_central')
 
         @commands.command(name='connect')
