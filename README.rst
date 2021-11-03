@@ -34,13 +34,13 @@ The following commands are currently the valid ways of installing NextLink.
 
 .. code:: sh
 
-    py -3.7 -m pip install Wavelink
+    py -3.7 -m pip install Nextlink
 
 **Linux**
 
 .. code:: sh
 
-    python3.7 -m pip install Wavelink
+    python3.7 -m pip install Nextlink
 
 Getting Started
 ----------------------------
