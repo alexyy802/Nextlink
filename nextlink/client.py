@@ -124,7 +124,7 @@ class Client:
 
     def _future_callback(self, cog, listener, fut):
         if fut.exception():
-            self.loop.create_task(cog.on_wavelink_error(listener, fut.exception()))
+            self.loop.create_task(cog.on_nextlink_error(listener, fut.exception()))
 
     async def get_tracks(self, query: str, *, retry_on_failure: bool = True) -> Optional[list]:
         """|coro|

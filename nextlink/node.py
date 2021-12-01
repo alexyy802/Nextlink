@@ -250,7 +250,7 @@ class Node:
             The hook provided was not a valid callable.
         """
         if not callable(func):
-            raise WavelinkException('Node hook must be a callable.')
+            raise NextlinkException('Node hook must be a callable.')
 
         self.hook = func
 
