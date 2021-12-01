@@ -20,7 +20,7 @@ import asyncio
 import inspect
 import json
 import logging
-from discord.ext import commands
+from nextcord.ext import commands
 from typing import Any, Callable, Dict, Optional, Union
 from urllib.parse import quote
 
