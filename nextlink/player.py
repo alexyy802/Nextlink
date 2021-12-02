@@ -19,8 +19,8 @@ SOFTWARE.
 import logging
 import time
 import re
-from discord.ext import commands
-from discord.gateway import DiscordWebSocket
+from nextcord.ext import commands
+from nextcord.gateway import DiscordWebSocket
 from typing import Optional, Union
 
 from .errors import *
@@ -122,7 +122,7 @@ class Player:
     """Wavelink Player class.
     Attributes
     ------------
-    bot: Union[discord.ext.commands.Bot, discord.ext.commands.AutoShardedBot]
+    bot: Union[nextcord.ext.commands.Bot, nextcord.ext.commands.AutoShardedBot]
         The discord Bot instance.
     guild_id: int
         The guild ID the player is connected to.
